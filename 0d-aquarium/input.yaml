@@ -1,0 +1,10 @@
+wind_speed:
+  file: wind.dat
+  column: 1
+  scale_factor: 1.0
+absorption_of_silt:
+  constant_value: 0.07
+mole_fraction_of_carbon_dioxide_in_air:
+  constant_value: 411.29
+bottom_stress:
+  constant_value: 0.0
