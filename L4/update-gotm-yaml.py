@@ -14,7 +14,7 @@ args = parser.parse_args()
 
 gotm_exe = args.gotm
 url = \
-    "https://raw.githubusercontent.com/gotm-model/code/master/scripts/python/update_setup.py"
+    "https://raw.githubusercontent.com/gotm-model/code/v6.0/scripts/python/update_setup.py"
 
 try:
     import wget
@@ -32,5 +32,4 @@ except:
               "this can be done with `pip` by the following " \
               "command `python -m pip install wget pyyaml`"
     sys.exit(message)
-
 
