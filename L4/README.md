@@ -3,7 +3,7 @@
 The setup in this folder was created for gotm v5. Running a later version of gotm you will need to update the `gotm.yaml` file. This can be done by following the description below.
 
 Option 1:
-1. If you have an upto date `gotm` source code avaliable, simplily run `python3 <GOTM_CODE_DIR>/scripts/python/update_setup.py gotm.yaml --gotm <PATH_TO_GOTM_EXECUTABLE>`.
+1. If you have an up to date `gotm` source code available, simply run `python3 <GOTM_CODE_DIR>/scripts/python/update_setup.py gotm.yaml --gotm <PATH_TO_GOTM_EXECUTABLE>`.
 
 Option 2:
 1. Download the `gotm` updater from [here](https://github.com/gotm-model/code/blob/master/scripts/python/update_setup.py)
@@ -12,4 +12,3 @@ Option 2:
 
 Option 3:
 1. Run `python update-gotm-yaml.py` in the L4 setups folder. You can add the optional argument `--gotm <gotm-excutable>` which will include all extra comments in the yaml file `python update-gotm-yaml.py --gotm <gotm-excutable>`
-
