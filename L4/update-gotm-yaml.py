@@ -20,7 +20,7 @@ try:
     import wget
     wget.download(url)
     updater = url.split('/')[-1]
-    command = "python {} gotm.yaml".format(updater)
+    command = "{} {} gotm.yaml".format(os.environ['_'], updater)
     if gotm_exe:
         command += " --gotm {}".format(gotm_exe)
     process = subprocess.Popen(command, stdout=subprocess.PIPE, shell=True)
@@ -32,4 +32,3 @@ except:
               "this can be done with `pip` by the following " \
               "command `python -m pip install wget pyyaml`"
     sys.exit(message)
-
