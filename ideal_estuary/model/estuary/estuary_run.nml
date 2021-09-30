@@ -1,0 +1,393 @@
+ &NML_CASE
+ CASE_TITLE      = '1-D ice test',
+ TIMEZONE        = 'UTC',
+ DATE_FORMAT     = 'YMD',
+ DATE_REFERENCE  = 'default',
+ START_DATE      = '1990-01-01 00:00:00',
+ END_DATE        = '1990-02-01 00:00:00'
+ /
+
+ &NML_STARTUP
+ STARTUP_TYPE    = 'coldstart',
+ STARTUP_FILE    = 'none'            ,
+ STARTUP_UV_TYPE = 'default'                ,
+ STARTUP_TURB_TYPE = 'default'              ,
+ STARTUP_TS_TYPE = 'constant'               ,
+ STARTUP_T_VALS  =  20.0      ,
+ STARTUP_S_VALS  = 30.0      ,
+ STARTUP_U_VALS  =  .0     ,
+ STARTUP_V_VALS  =  .0     ,
+ STARTUP_DMAX    =  -50.0     
+ /
+
+ &NML_IO
+ INPUT_DIR       = './input/'                        ,
+ OUTPUT_DIR      = './output/'                ,
+ IREPORT =           3600,
+ VISIT_ALL_VARS  = F,
+ WAIT_FOR_VISIT  = F,
+ USE_MPI_IO_MODE = F
+ /
+
+ &NML_INTEGRATION
+ EXTSTEP_SECONDS = 20.0,
+ ISPLIT  =           10,
+ IRAMP   =          0,
+ MIN_DEPTH       =  0.05,
+ STATIC_SSH_ADJ  =  0.00
+ /
+
+ &NML_RESTART
+ RST_ON  = T,
+ RST_FIRST_OUT   = '1990-01-01 00:00:00' ,
+ RST_OUT_INTERVAL        = 'days=30.0'   ,
+ RST_OUTPUT_STACK        =          12
+ /
+
+ &NML_NETCDF
+ NC_ON   = F,
+ NC_FIRST_OUT    = '1990-01-01 00:00:00'    ,
+ NC_OUT_INTERVAL = 'days=5.0'    ,
+ NC_OUTPUT_STACK =           365,
+ NC_SUBDOMAIN_FILES      = 'FVCOM',     
+ NC_GRID_METRICS = T,
+ NC_FILE_DATE    = F,
+ NC_VELOCITY     = T,
+ NC_SALT_TEMP    = T,
+ NC_TURBULENCE   = F,
+ NC_AVERAGE_VEL  = F,
+ NC_VERTICAL_VEL = F,
+ NC_WIND_VEL     = F,
+ NC_WIND_STRESS  = F,
+ NC_EVAP_PRECIP  = F,
+ NC_SURFACE_HEAT = F,
+ NC_GROUNDWATER  = F,
+ NC_BIO  = F,
+ NC_WQM  = F,
+ NC_FABM         = T,
+ NC_VORTICITY    = F
+ /
+ 
+ &NML_NETCDF_AV
+ NCAV_ON = T,
+ NCAV_FIRST_OUT  ='1990-01-01 00:00:00'    ,
+ NCAV_OUT_INTERVAL       = 'days=1.0'  ,
+ NCAV_OUTPUT_STACK       = 365,
+ NCAV_SUBDOMAIN_FILES    = FVCOM , 
+ NCAV_GRID_METRICS       = T,
+ NCAV_FILE_DATE  = T,
+ NCAV_VELOCITY   = T,
+ NCAV_SALT_TEMP  = T,
+ NCAV_TURBULENCE = F,
+ NCAV_AVERAGE_VEL        = F,
+ NCAV_VERTICAL_VEL       = F,
+ NCAV_WIND_VEL   = F,
+ NCAV_WIND_STRESS        = F,
+ NCAV_EVAP_PRECIP        = F,
+ NCAV_SURFACE_HEAT       = F,
+ NCAV_GROUNDWATER        = F,
+ NCAV_BIO        = F,
+ NCAV_WQM        = F,
+ NCAV_VORTICITY  = F,
+ NCAV_FABM       = T
+ /
+
+ &NML_SURFACE_FORCING
+ WIND_ON = T,
+ WIND_TYPE       = 'speed'              ,
+ WIND_FILE       = '2D_forcing_50_years_20180927_new_grd.nc'   ,
+ WIND_KIND       = 'variable'       ,
+ WIND_X  =  0.000000000000000E+000,
+ WIND_Y  =  0.000000000000000E+000,
+ HEATING_ON      = T,
+ HEATING_TYPE    = 'flux'                                                                ,
+ HEATING_KIND    = 'variable'                  ,
+ HEATING_FILE    = '2D_forcing_50_years_20180927_new_grd.nc'  ,
+ HEATING_LONGWAVE_LENGTHSCALE    =   1.40000000000000     ,
+ HEATING_LONGWAVE_PERCTAGE       =  0.780000000000000     ,
+ HEATING_SHORTWAVE_LENGTHSCALE   =   6.30000000000000     ,
+ HEATING_RADIATION       =  0.00000000000000,
+ HEATING_NETFLUX =  0.0000000000000,
+ PRECIPITATION_ON        = F,
+ PRECIPITATION_KIND      = 'periodic'            ,
+ PRECIPITATION_FILE      = '2D_forcing_50_years_20180927_new_grd.nc'   ,
+ PRECIPITATION_PRC       =  0.000000000E+000,
+ PRECIPITATION_EVP       =  0.000000000E+000,
+ AIRPRESSURE_ON  = F,
+ AIRPRESSURE_KIND        = 'periodic'             ,
+ AIRPRESSURE_FILE        = '2D_forcing_50_years_20180927_new_grd.nc'                     ,
+ AIRPRESSURE_VALUE       =  100000.0000E+000,
+ WAVE_ON = F,
+ WAVE_FILE       = 'N1D_wav.nc'               ,
+ WAVE_KIND       = 'periodic'                      ,
+ WAVE_HEIGHT     =  0.000000000000000E+000,
+ WAVE_LENGTH     =  0.000000000000000E+000,
+ WAVE_DIRECTION  =  0.000000000000000E+000,
+ WAVE_PERIOD     =  0.000000000000000E+000,
+ WAVE_PER_BOT    =  0.000000000000000E+000,
+ WAVE_UB_BOT     =  0.000000000000000E+000
+ /
+
+ &NML_NETCDF_SURFACE
+ NCSF_ON = F,
+ NCSF_FIRST_OUT  = 'seconds=0.0'   ,
+ NCSF_OUT_INTERVAL       = 'second=3600.'  ,
+ NCSF_OUTPUT_STACK       =           0,
+ NCSF_SUBDOMAIN_FILES    = FVCOM,
+ NCSF_GRID_METRICS       = F,
+ NCSF_FILE_DATE  = F,
+ NCSF_VELOCITY   = F,
+ NCSF_SALT_TEMP  = F,
+ NCSF_TURBULENCE = F,
+ NCSF_WIND_VEL   = F,
+ NCSF_WIND_STRESS        = F,
+ NCSF_EVAP_PRECIP        = F,
+ NCSF_SURFACE_HEAT       = F
+ /
+
+ &NML_PHYSICS
+ HORIZONTAL_MIXING_TYPE  = 'closure',
+ HORIZONTAL_MIXING_FILE  = cje1v_hvc.nc,
+ HORIZONTAL_MIXING_KIND  = 'constant'              ,
+ HORIZONTAL_MIXING_COEFFICIENT   =  0.4     ,
+ HORIZONTAL_PRANDTL_NUMBER       =   1.0    ,
+ VERTICAL_MIXING_TYPE    = 'closure'             ,
+ VERTICAL_MIXING_COEFFICIENT     =  1.000E-4     ,
+ VERTICAL_PRANDTL_NUMBER =  1.000E+0    ,
+ BOTTOM_ROUGHNESS_TYPE   = 'orig'        ,
+ BOTTOM_ROUGHNESS_KIND   = 'constant'              ,
+ BOTTOM_ROUGHNESS_FILE   = 'cje1v_brf.nc'            ,
+ BOTTOM_ROUGHNESS_LENGTHSCALE    =  0.001       ,
+ BOTTOM_ROUGHNESS_MINIMUM        =  0.0025        ,
+ CONVECTIVE_OVERTURNING  = F,
+ SCALAR_POSITIVITY_CONTROL       = T,
+ BAROTROPIC      = F,
+ BAROCLINIC_PRESSURE_GRADIENT    = 'sigma levels' ,
+ SEA_WATER_DENSITY_FUNCTION      = 'dens2'        ,
+ RECALCULATE_RHO_MEAN    = F,
+ INTERVAL_RHO_MEAN       = 'seconds=1800.0'                        ,
+ TEMPERATURE_ACTIVE      = T,
+ SALINITY_ACTIVE = T,
+ SURFACE_WAVE_MIXING     = F,
+ WETTING_DRYING_ON       = F,
+ ADCOR_ON        = F
+ /
+
+ &NML_RIVER_TYPE
+ RIVER_NUMBER    =          2,
+ RIVER_TS_SETTING        = 'specified'     ,
+ RIVER_INFLOW_LOCATION   = 'edge'    
+ RIVER_INFO_FILE   = 'RIVERS_NAMELIST.nml'
+ RIVER_KIND = 'variable' 
+/
+ 
+
+ &NML_OPEN_BOUNDARY_CONTROL
+ OBC_ON  = T,
+ OBC_NODE_LIST_FILE      = '2D_2_obc.dat'            ,
+ OBC_ELEVATION_FORCING_ON        = T,
+ OBC_ELEVATION_FILE      = '2D_obc_50_years_8_tide.nc'       , 
+ OBC_TS_TYPE     =          3,
+ OBC_TEMP_NUDGING        = T,
+ OBC_TEMP_FILE   =    '2D_obc_ts_forcing.nc'                 ,
+ OBC_TEMP_NUDGING_TIMESCALE      =  2.7999999E-3,
+ OBC_SALT_NUDGING        = T,
+ OBC_SALT_FILE   =    '2D_obc_ts_forcing.nc'                   ,
+ OBC_SALT_NUDGING_TIMESCALE      =  2.7999999E-3,
+ OBC_FABM_NUDGING           = F,
+ OBC_FABM_FILE              ='fdafdaf', 
+ OBC_FABM_NUDGING_TIMESCALE = 0.5, 
+ OBC_MEANFLOW    = F,
+ OBC_MEANFLOW_FILE       = 'dasdsa'               ,
+ OBC_TIDEOUT_INITIAL     =           0,
+ OBC_TIDEOUT_INTERVAL    =           0,
+ OBC_LONGSHORE_FLOW_ON   = F,
+ OBC_LONGSHORE_FLOW_FILE = N1D_lsf.dat,      
+ OBC_DEPTH_CONTROL_ON    = F ,
+/
+
+ &NML_GRID_COORDINATES
+ GRID_FILE       = '2D_grd_new_test.dat'                                                             ,
+ GRID_FILE_UNITS = 'meters'           ,
+ PROJECTION_REFERENCE    = 'none' ,
+ SIGMA_LEVELS_FILE       = '2D_2_sig.dat'    ,
+ DEPTH_FILE      = '2D_2_dep.dat'  ,
+ CORIOLIS_FILE   = '2D_2_cor.dat'  ,
+ SPONGE_FILE     = '2D_2_spg.dat'                                                             
+ /
+ &NML_GROUNDWATER
+ GROUNDWATER_ON  = F,
+ GROUNDWATER_TEMP_ON     = F,
+ GROUNDWATER_SALT_ON     = F,
+ GROUNDWATER_KIND        = 'periodic'                  ,
+ GROUNDWATER_FILE        = '1D_grndwtr.nc'             ,
+ GROUNDWATER_FLOW        =  0.000000000000000E+000,
+ GROUNDWATER_TEMP        =  0.000000000000000E+000,
+ GROUNDWATER_SALT        =  0.000000000000000E+000
+ /
+ &NML_LAG
+ LAG_PARTICLES_ON        = F,
+ LAG_START_FILE  = 'init_lag.nc'  ,
+ LAG_OUT_FILE    = 'lag_out.nc'   ,
+ LAG_FIRST_OUT   = 'days=1.0'     ,
+ LAG_RESTART_FILE        = 'lag_restart.nc'    ,
+ LAG_OUT_INTERVAL        ='days=1.'       ,
+ LAG_SCAL_CHOICE = 'none'                                                                            
+ /
+ &NML_ADDITIONAL_MODELS
+ DATA_ASSIMILATION       = F,
+ DATA_ASSIMILATION_FILE  = 'idea_run.nml'       ,
+ BIOLOGICAL_MODEL        = F,
+ STARTUP_BIO_TYPE        = 'observed'         ,
+ FABM_MODEL      = T, 
+ SEDIMENT_MODEL  = T,
+ SEDIMENT_MODEL_FILE     = 'offline_oneway_sediment.inp'                ,
+ SEDIMENT_PARAMETER_TYPE = 'uniform'          ,
+ SEDIMENT_PARAMETER_FILE = 'none'              ,         
+ BEDFLAG_TYPE    ='constant'                  ,
+ BEDFLAG_FILE    = 'dfadfag'                 ,
+ ICING_MODEL     = F
+ /
+ &NML_PROBES
+ PROBES_ON       = F,
+ PROBES_NUMBER   =           0,
+ PROBES_FILE     = 'none'                                                        
+ /
+ &NML_BOUNDSCHK
+ BOUNDSCHK_ON    = F,
+ CHK_INTERVAL    =           1,
+ VELOC_MAG_MAX   =  20.0,
+ ZETA_MAG_MAX    =  12.0,
+ TEMP_MAX        =  40.0,
+ TEMP_MIN        =  -10.0,
+ SALT_MAX        =  40.0,
+ SALT_MIN        =  -5.0
+ /
+ &NML_NCNEST
+ NCNEST_ON       = F,
+ NCNEST_BLOCKSIZE        =   -1,
+ NCNEST_NODE_FILES       = 'none'                                                                                                      
+                                                       
+ /
+ &NML_NESTING
+ NESTING_ON      = F,
+ NESTING_TYPE    = '1'        ,
+ NESTING_BLOCKSIZE       =   1,
+ NESTING_FILE_NAME       = N1D_ice.nml_nesting.nc                                                          
+ /
+! &NML_ONEDTIDE
+! NUMTIDES        =      7,
+! UMAX    = 1.0 0.8 0.6 0.4 0.2 0.1 0.05 ,
+! PMAX    = 0.0 0.0 0.0 0.0 0.0 0.0 0.0    
+ /
+ &NML_STATION_TIMESERIES
+ OUT_STATION_TIMESERIES_ON       = F,
+ STATION_FILE    = 'none'                 ,
+ LOCATION_TYPE   = 'node'          ,
+ OUT_ELEVATION   = F,
+ OUT_VELOCITY_3D = F,
+ OUT_VELOCITY_2D = F,
+ OUT_WIND_VELOCITY       = F,
+ OUT_SALT_TEMP   = F,
+ OUT_INTERVAL    = 'days=1.0'                           
+ /
+ &NML_TSGRD_ASSIMILATION
+ TSGRD_ASSIM         = F,                  
+ TSGRD_ASSIM_FILE    ='1D_Pts.nc',
+ TSGRD_WEIGHT_MAX    = 0.5 ,               
+ TSGRD_TIMESCALE     = 0.003,                
+ TSGRD_TIME_WINDOW   = 3600.0,              
+ TSGRD_N_PER_INTERVAL= 24
+/
+&NML_SST_ASSIMILATION
+ SST_ASSIM       = F,
+ SST_ASSIM_FILE  = N1D_sst.nc   ,
+ SST_RADIUS      =  0.000000000000000E+000,
+ SST_WEIGHT_MAX  =  0.000000000000000E+000,
+ SST_TIMESCALE   =  0.000000000000000E+000,
+ SST_TIME_WINDOW =  0.000000000000000E+000,
+ SST_N_PER_INTERVAL      =           0
+ /
+ &NML_SSTGRD_ASSIMILATION
+ SSTGRD_ASSIM    = F,
+ SSTGRD_ASSIM_FILE       = N1D_sstgrd.nc,
+ SSTGRD_WEIGHT_MAX       =  0.000000000000000E+000,
+ SSTGRD_TIMESCALE        =  0.000000000000000E+000,
+ SSTGRD_TIME_WINDOW      =  0.000000000000000E+000,
+ SSTGRD_N_PER_INTERVAL   =           0
+ /
+&NML_SSHGRD_ASSIMILATION
+ SSHGRD_ASSIM    = F,
+ SSHGRD_ASSIM_FILE       = N1D_sshgrd.nc                                                                   ,
+ SSHGRD_WEIGHT_MAX       =  0.000000000000000E+000,
+ SSHGRD_TIMESCALE        =  0.000000000000000E+000,
+ SSHGRD_TIME_WINDOW      =  0.000000000000000E+000,
+ SSHGRD_N_PER_INTERVAL   =           0
+ /
+&NML_SSHGRD_ASSIMILATION
+ SSHGRD_ASSIM    = F,
+ SSHGRD_ASSIM_FILE       = N1D_sshgrd.nc                                                                   ,
+ SSHGRD_WEIGHT_MAX       =  0.000000000000000E+000,
+ SSHGRD_TIMESCALE        =  0.000000000000000E+000,
+ SSHGRD_TIME_WINDOW      =  0.000000000000000E+000,
+ SSHGRD_N_PER_INTERVAL   =           0
+ /
+&NML_SSHGRD_ASSIMILATION
+ SSHGRD_ASSIM    = F,
+ SSHGRD_ASSIM_FILE       = N1D_sshgrd.nc                                                                   ,
+ SSHGRD_WEIGHT_MAX       =  0.000000000000000E+000,
+ SSHGRD_TIMESCALE        =  0.000000000000000E+000,
+ SSHGRD_TIME_WINDOW      =  0.000000000000000E+000,
+ SSHGRD_N_PER_INTERVAL   =           0
+ /
+&NML_SSHGRD_ASSIMILATION
+ SSHGRD_ASSIM    = F,
+ SSHGRD_ASSIM_FILE       = N1D_sshgrd.nc                                                                   ,
+ SSHGRD_WEIGHT_MAX       =  0.000000000000000E+000,
+ SSHGRD_TIMESCALE        =  0.000000000000000E+000,
+ SSHGRD_TIME_WINDOW      =  0.000000000000000E+000,
+ SSHGRD_N_PER_INTERVAL   =           0
+ /
+&NML_CUR_NGASSIMILATION
+ CUR_NGASSIM     = F,
+ CUR_NGASSIM_FILE        = N1D_cur                                                                         ,
+ CUR_NG_RADIUS   =  0.000000000000000E+000,
+ CUR_GAMA        =  0.000000000000000E+000,
+ CUR_GALPHA      =  0.000000000000000E+000,
+ CUR_NG_ASTIME_WINDOW    =  0.000000000000000E+000
+ /
+&NML_CUR_OIASSIMILATION
+ CUR_OIASSIM     = F,
+ CUR_OIASSIM_FILE        = N1D_cur                                                                         ,
+ CUR_OI_RADIUS   =  0.000000000000000E+000,
+ CUR_OIGALPHA    =  0.000000000000000E+000,
+ CUR_OI_ASTIME_WINDOW    =  0.000000000000000E+000,
+ CUR_N_INFLU     =           0,
+ CUR_NSTEP_OI    =                     0
+ /                                                             
+ &NML_TS_NGASSIMILATION
+ TS_NGASSIM      = F,
+ TS_NGASSIM_FILE = N1D_ts                                                                          ,
+ TS_NG_RADIUS    =  0.000000000000000E+000,
+ TS_GAMA =  0.000000000000000E+000,
+ TS_GALPHA       =  0.000000000000000E+000,
+ TS_NG_ASTIME_WINDOW     =  0.000000000000000E+000
+ /
+ &NML_TS_OIASSIMILATION
+ TS_OIASSIM      = F,
+ TS_OIASSIM_FILE = N1D_ts                                                                          ,
+ TS_OI_RADIUS    =  0.000000000000000E+000,
+ TS_OIGALPHA     =  0.000000000000000E+000,
+ TS_OI_ASTIME_WINDOW     =  0.000000000000000E+000,
+ TS_MAX_LAYER    =           0,
+ TS_N_INFLU      =           0,
+ TS_NSTEP_OI     =                     0
+ /
+
+&NML_FABM
+ STARTUP_FABM_TYPE = 'constant'
+ !OFFLINE_FABM_FILE = 'cje1v_offline_current.nc'
+ USE_FABM_BOTTOM_THICKNESS = F
+ USE_FABM_SALINITY = F
+ FABM_DEBUG = F
+/

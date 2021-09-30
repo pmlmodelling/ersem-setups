@@ -1,0 +1,14 @@
+&NML_RIVER
+ RIVER_NAME                 = 'river1                                                                          '
+ RIVER_FILE                 = '2D_bio_River_50_years_20180821_monthly_river_2_tracers_T1T2.nc'
+ RIVER_GRID_LOCATION        = 195,
+ RIVER_VERTICAL_DISTRIBUTION = 'uniform'
+ /
+&NML_RIVER
+ RIVER_NAME                 = 'river2                                                                          '
+ RIVER_FILE                 = '2D_bio_River_50_years_20180821_monthly_river_2_tracers_T1T2.nc'
+ RIVER_GRID_LOCATION        = 196,
+ RIVER_VERTICAL_DISTRIBUTION = 'uniform'
+ /
+
+

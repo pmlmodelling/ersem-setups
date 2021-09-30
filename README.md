@@ -22,3 +22,8 @@ Repository for ERSEM configurations and forcing data.
 - The tidal forcing data was generated using [FVCOM](http://fvcom.smast.umassd.edu/fvcom/), as part of the Risks and Opportunities for Sustainable Aquaculture (ROSA) project, grant number BB/M026221/1.
 
 
+## 3D ideal estuary model with FVCOM
+
+### Data sources
+
+- The climatology forcing data is based on Changjiang river in China provided by [State Key Laboratory of Estuarine and Coastal Research (SKLEC)](http://english.sklec.ecnu.edu.cn/).

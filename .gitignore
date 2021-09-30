@@ -1,0 +1,9 @@
+# ideal estuary setup ignored files
+ideal_estuary/code/
+ideal_estuary/model/FABM-ERSEM-LOCATE
+ideal_estuary/model/estuary/logs
+ideal_estuary/model/estuary/output
+ideal_estuary/model/estuary/bin
+ideal_estuary/model/estuary/figures
+.fvcomtestfile
+
