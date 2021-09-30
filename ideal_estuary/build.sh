@@ -40,13 +40,13 @@ make install -j 20
 
 cd $SCRIPT_DIR
 
+sed -i 's|BASE_SETUP_DIR|'"$SCRIPT_DIR"'|g' make_ideal_estuary.inc
 ln -s $SCRIPT_DIR/make_ideal_estuary.inc $SCRIPT_DIR/code/uk-fvcom/FVCOM_source/make.inc
 
 cd $SCRIPT_DIR/code/uk-fvcom/FVCOM_source/libs
 mv makefile makefile_
 ln -s makefile.CETO makefile
 make -j 20
-
 
 cd ..
 make -j 20
