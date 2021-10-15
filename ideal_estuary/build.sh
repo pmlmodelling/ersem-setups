@@ -38,7 +38,7 @@ mkdir build
 cd build
 # Production config:
 cmake $FABM -DFABM_HOST=fvcom -DFABM_ERSEM_BASE=$ERSEM -DCMAKE_Fortran_COMPILER=$FC -DCMAKE_INSTALL_PREFIX=$FABM_INSTALL
-make install -j num_cpu
+make install -j $num_cpu
 
 cd $SCRIPT_DIR
 
@@ -49,8 +49,8 @@ ln -s $SCRIPT_DIR/make_ideal_estuary.inc $SCRIPT_DIR/code/uk-fvcom/FVCOM_source/
 cd $SCRIPT_DIR/code/uk-fvcom/FVCOM_source/libs
 mv makefile makefile_
 ln -s makefile.CETO makefile
-make -j num_cpu
+make -j $num_cpu
 
 # Building FVCOM
 cd ..
-make -j num_cpu
+make -j $num_cpu
