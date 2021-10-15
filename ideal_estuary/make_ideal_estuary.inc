@@ -27,7 +27,7 @@
 #========== TOPDIR ========================================================
 # TOPDIR is the directory in which this make file and the fvcom source reside
 
-           TOPDIR        =  /users/modellers/miwa/git/ersem-setups/ideal_estuary/code/uk-fvcom/FVCOM_source
+           TOPDIR        =  BASE_SETUP_DIR/code/uk-fvcom/FVCOM_source
 # TOPDIR must be set!
 
 #========== INSTALLDIR =====================================================
@@ -171,7 +171,7 @@ dashL= $(empty) -L
 #             include ${PETSC_DIR}/bmake/common/variables
 #             OILIB  = -lmkl_lapack -lmkl_em64t -lguide -lpthread
 
-             OILIB  = -L/gpfs1/apps/intel/mkl/lib/em64t/ -lmkl_lapack95_ilp64 -lmkl_intel_ilp64 -lmkl_core -lmkl_sequential
+#             OILIB  = -L/gpfs1/apps/intel/mkl/lib/em64t/ -lmkl_lapack95_ilp64 -lmkl_intel_ilp64 -lmkl_core -lmkl_sequential
 
 # For Build on em64t computer (Guppy)
 #             LIBDIR = $(LIBDIR) -L/usr/local/lib64
@@ -331,8 +331,8 @@ dashL= $(empty) -L
 #       GENERAL BIOLOGICAL MODEL:    UNCOMMENT TO INCLUDE MODEL
 #--------------------------------------------------------------------------
             FLAG_25 = -DFABM  #-DOFFLINE_FABM  # -DFABM_DIAG_OUT
-            BIOLIB       = -L/users/modellers/miwa/git/ersem-setups/ideal_estuary/model/FABM-ERSEM-LOCATE/lib -lfabm
-            BIOINCS      = -I/users/modellers/miwa/git/ersem-setups/ideal_estuary/model/FABM-ERSEM-LOCATE/include -I/users/modellers/miwa/git/ersem-setups/ideal_estuary/model/FABM-ERSEM-LOCATE/include/yaml
+            BIOLIB       = -LBASE_SETUP_DIR/model/FABM-ERSEM/lib -lfabm
+            BIOINCS      = -IBASE_SETUP_DIR/model/FABM-ERSEM/include -IBASE_SETUP_DIR/model/FABM-ERSEM/include/yaml
 
 #--------------------------------------------------------------------------
 #         Dynamic/Thermodynamic Ice
@@ -509,7 +509,7 @@ dashL= $(empty) -L
 #         CXX      = icc
 #         CFLAGS   = -O3
 #         DEBFLGS  = #-check all
-# Use 'OPT = -O0 -g' for fast compile to/users/modellers/miwa/git/ersem-setups/ideal_estuarythe make
+# Use 'OPT = -O0 -g' for fast compile toBASE_SETUP_DIRthe make
 # Use 'OPT = -xP' for fast run on em64t (Hydra and Guppy)
 # Use 'OPT = -xN' for fast run on ia32 (Salmon and Minke)
 #         OPT      = -O0 -g
@@ -527,7 +527,7 @@ dashL= $(empty) -L
 #         CFLAGS   = -O3
 #         FC       = mpif90
 #         DEBFLGS  = -check all -traceback
-# Use 'OPT = -O0 -g'  for fast compile to/users/modellers/miwa/git/ersem-setups/ideal_estuarythe make
+# Use 'OPT = -O0 -g'  for fast compile toBASE_SETUP_DIRthe make
 # Use 'OPT = -xP' for fast run on em64t (Hydra and Guppy)
 # Use 'OPT = -xN' for fast run on ia32 (Salmon and Minke)
 #         OPT      = -O0 -g

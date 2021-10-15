@@ -35,7 +35,7 @@ save_plot = True  # to save the plot
 
 fvcom = MFileReader(MyFile)
 
-varlist = ['total_food', 'GPP', 'temp', 'salinity',
+varlist = ['GPP', 'temp', 'salinity',
            'P1_Chl', 'O3_c', 'R6_c', 'N1_p', 'N3_n',
            'tracer1_c', 'total_chl']
 
@@ -61,10 +61,6 @@ for var in varlist:
         plotvars = ['P1_Chl', 'P2_Chl', 'P3_Chl', 'P4_Chl']
     elif var == 'netPP':
         plotvars = ['P1_Chl', 'P2_Chl', 'P3_Chl', 'P4_Chl']
-    elif var == 'total_food':
-        plotvars = ["P1_c", "P2_c", "P3_c",
-                    "P4_c", "Z5_c", "Z5_c",
-                    "R8_c", "R6_c", "R4_c"]
     elif var == 'GPP':
         plotvars = ["P1_fO3PIc", "P2_fO3PIc", "P3_fO3PIc", "P4_fO3PIc"]
     else:
