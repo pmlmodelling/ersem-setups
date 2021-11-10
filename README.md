@@ -27,3 +27,6 @@ Repository for ERSEM configurations and forcing data.
 ### Data sources
 
 - The climatology forcing data is based on Changjiang river in China provided by [State Key Laboratory of Estuarine and Coastal Research (SKLEC)](http://english.sklec.ecnu.edu.cn/).
+
+## NEMO-ERSEM AMM7 installation setup
+
