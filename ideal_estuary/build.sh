@@ -8,9 +8,9 @@ INSTALL_DIR=$SCRIPT_DIR/model
 
 num_cpu=$(nproc)
 
-website=("git@gitlab.ecosystem-modelling.pml.ac.uk:fvcom/uk-fvcom.git" "git@github.com:pmlmodelling/ersem.git" "git@github.com:fabm-model/fabm.git")
+website=("git@github.com:UK-FVCOM-Usergroup/uk-fvcom.git" "git@github.com:pmlmodelling/ersem.git" "git@github.com:fabm-model/fabm.git")
 name=("uk-fvcom" "ersem" "fabm")
-branch=("FABMv1_v4.3" "master" "master")
+branch=("FVCOM-FABM" "master" "master")
 
 mkdir $CODE_DIR
 cd $CODE_DIR
