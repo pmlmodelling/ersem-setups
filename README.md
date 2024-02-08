@@ -8,7 +8,7 @@ Repository for ERSEM configurations and forcing data.
 
 #### Data sources
 
-- The meteoroligal forcing data comes from the ouput generated from the 1D water column configurations in this repository.
+- The meteorological forcing data comes from the ouput generated from the 1D water column configurations in this repository.
 - Scripts have been adapted from the [FABM 0d GitHub repo](https://github.com/fabm-model/fabm/tree/master/testcases/0d)
 
 ## 1D Water Column setups
