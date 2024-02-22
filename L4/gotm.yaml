@@ -1,7 +1,7 @@
 # This file was created with every possible GOTM setting.
 # You can generate a configuration with just the commonly used settings with: gotm --write_yaml <OUTFILE> --detail default
 # To see only the settings that differ from the default, use: gotm --write_yaml <OUTFILE> --detail minimal
-version: 7                                           # version of configuration file [default=7]
+version: 6                                           # version of configuration file [default=6]
 title: GOTM-ERSEM at L4                              # simulation title used in output [default=GOTM simulation]
 location:
    name: L4                                          # station name used in output [default=GOTM site]
